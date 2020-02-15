@@ -1,0 +1,8 @@
+{
+    "author" : ["ninkeon58"],
+    "install_msg" : "Gday! This is ninkeon58's cog page, check them out at <https://github.com/drninkeo/ninkeos-cogs>.",
+    "name" : "ninkeos-cogs",
+    "short" : "Simple stuff",
+    "description" : "Some cogs that should exist, because yeah.",
+    "tags" : ["notmuch"]
+}
