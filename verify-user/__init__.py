@@ -1,4 +1,4 @@
-from .selfverify import selfverify
+from .verify import verify
 
 def setup(bot):
-    bot.add_cog(selfverify())
+    bot.add_cog(verify())
