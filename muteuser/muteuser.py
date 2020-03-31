@@ -10,4 +10,5 @@ class muteuser(commands.Cog):
         # Your code will go here
         if user is None:
             await ctx.send("Error: you need to define a user to mute.")
+            
         await ctx.send("I can do stuff!")
