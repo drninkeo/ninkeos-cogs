@@ -10,7 +10,7 @@ class admintools(commands.Cog):
         # Your code will go here
         if user is None:
             await ctx.send("Error: a user is required.")
-        if role is None
+        if role is None:
             await ctx.send("Error: you need to define a role to apply to the user.")
-        if role is not None and user is not None
+        if role is not None and user is not None:
             await ctx.send("all good")
