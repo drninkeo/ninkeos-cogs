@@ -1,4 +1,4 @@
-from .verify import verify
+from .admintools import admintools
 
 def setup(bot):
-    bot.add_cog(verify())
+    bot.add_cog(admintools())
