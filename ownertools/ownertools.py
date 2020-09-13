@@ -12,7 +12,7 @@ class ownertools(commands.Cog):
         if guild_id is None:
             await ctx.send("Error: a server ID is required (hint: you may need dev mode enabled to get the ID)")
         elif guild_id is not None:
-            str_message = ''Members in **' + gld.name + '**:' \n'
+            str_message = 'Members in **' + gld.name + '**: \n'
             try:
                 if num_members > 1000:
                   num_members = 1000
