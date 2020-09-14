@@ -20,7 +20,7 @@ class ownertools(commands.Cog):
 
                 str_message += '``` \n'
                 
-                async for member in gld.fetch_members(num_members):
+                async for member in gld.fetch_members(limit=num_members):
                     str_message +=  member.name + '#' +member.discriminator + '\n'
 
                 str_message += '``` \n'
