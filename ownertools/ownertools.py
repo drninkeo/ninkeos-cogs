@@ -6,24 +6,30 @@ class ownertools(commands.Cog):
 
     @commands.command()
     @checks.is_owner()
-    async def guildmembers(self, ctx, guild_id: int = None, num_members: int = 10):
-        """Adds a channel with the given name"""
+    async def guildmembers(self, ctx, guild_id: int = None, num_members: int = 10, use_nick: bool = false):
+        """Gets members that are currently in the same guild as the bot. This can work in other servers, however the bot must be present. This command gets the original user name of a member, not their in-server nickname."""
         #work on it lol
         if guild_id is None:
             await ctx.send("Error: a server ID is required (hint: you may need dev mode enabled to get the ID)")
         else:
             gld = ctx.bot.get_guild(guild_id)
-            str_message = 'Members in **' + gld.name + '**: \n'
-            try:
-                if num_members > 1000:
-                  num_members = 1000
+            if gld is not None: 
+                str_message = 'Members in **' + gld.name + '**: \n'
+                try:
+                    if num_members > 1000:
+                        num_members = 1000
 
-                str_message += '``` \n'
+                    str_message += '```'
                 
-                async for member in gld.fetch_members(limit=num_members):
-                    str_message +=  member.name + '#' +member.discriminator + '\n'
+                    async for member in gld.fetch_members(limit=num_members):
+                        if use_nick == true:
+                            str_message +=  member.nick + '#' +member.discriminator + '\n'
+                        else:
+                            str_message +=  member.name + '#' +member.discriminator + '\n'
 
-                str_message += '``` \n'
-                await ctx.send(str_message)
-            except Exception as e:
-                await ctx.send('Command failed. Error: ' + str(e)) #if error
+                    str_message += '``` \n'
+                    await ctx.send(str_message)
+                except Exception as e:
+                    await ctx.send('Command failed. Error: ' + str(e)) #if error
+             else:
+                await ctx.send('Either I am not in this guild, or an unknown error has occured.') #bot is not in this guild
