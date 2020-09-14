@@ -6,7 +6,7 @@ class ownertools(commands.Cog):
 
     @commands.command()
     @checks.is_owner()
-    async def guildmembers(self, ctx, guild_id: int = None, num_members: int = 10, use_nick: bool = false):
+    async def guildmembers(self, ctx, guild_id: int = None, num_members: int = 10, use_nick: bool = False):
         """Gets members that are currently in the same guild as the bot. This can work in other servers, however the bot must be present. This command gets the original user name of a member, not their in-server nickname."""
         #work on it lol
         if guild_id is None:
@@ -22,7 +22,7 @@ class ownertools(commands.Cog):
                     str_message += '```'
                 
                     async for member in gld.fetch_members(limit=num_members):
-                        if use_nick == true:
+                        if use_nick == True:
                             str_message +=  member.nick + '#' +member.discriminator + '\n'
                         else:
                             str_message +=  member.name + '#' +member.discriminator + '\n'
