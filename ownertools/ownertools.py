@@ -31,5 +31,5 @@ class ownertools(commands.Cog):
                     await ctx.send(str_message)
                 except Exception as e:
                     await ctx.send('Command failed. Error: ' + str(e)) #if error
-             else:
-                await ctx.send('Either I am not in this guild, or an unknown error has occured.') #bot is not in this guild
+            else:
+               await ctx.send('Either I am not in this guild, or an unknown error has occured.') #bot is not in this guild
