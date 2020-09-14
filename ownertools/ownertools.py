@@ -14,7 +14,7 @@ class ownertools(commands.Cog):
         else:
             gld = ctx.bot.get_guild(guild_id)
             if gld is not None: 
-                str_message = 'Members in **' + gld.name + '**: \n'
+                str_message = 'Members in **' + gld.name + '** (ID : ' + guild_id + '): \n'
                 try:
                     if num_members > 1000:
                         num_members = 1000
